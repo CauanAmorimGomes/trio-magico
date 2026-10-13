@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
+  renderHeroPhotos();
   animateHeroStats();
   renderPlayers();
   renderTimeline();
@@ -57,12 +58,27 @@ function animateCount(el, target) {
 
 // ── FOTOS ─────────────────────────────────────
 // Mostra a foto; se o arquivo não existir, volta para o emoji.
-function photoHTML(src, emoji, cls) {
+function photoHTML(src, emoji, cls, pos) {
   if (!src) return `<div class="${cls} ${cls}--emoji">${emoji}</div>`;
+  const style = pos ? ` style="object-position:${pos}"` : "";
   return `<div class="${cls}">
-    <img src="${src}" alt="" loading="lazy"
+    <img src="${src}" alt=""${style} loading="lazy"
       onerror="this.parentElement.classList.add('${cls}--emoji'); this.parentElement.innerHTML='${emoji}'">
   </div>`;
+}
+
+// Fotos dos três no fundo do topo do site
+function renderHeroPhotos() {
+  const bg = document.querySelector(".hero__bg");
+  if (!bg) return;
+  const wrap = document.createElement("div");
+  wrap.className = "hero__photos";
+  wrap.innerHTML = PLAYERS.map((p) => `
+    <div class="hero__photo">
+      ${p.foto ? `<img src="${p.foto}" alt="" style="object-position:${p.fotoPos || "center"}" onerror="this.remove()">` : ""}
+      <span>${p.number}</span>
+    </div>`).join("");
+  bg.appendChild(wrap);
 }
 
 // ── PLAYERS ───────────────────────────────────
@@ -71,7 +87,7 @@ function renderPlayers() {
   grid.innerHTML = PLAYERS.map((p) => `
     <div class="player-card" data-player="${p.id}" style="--accent:${p.color}">
       <div class="player-card__number">${p.number}</div>
-      ${photoHTML(p.foto, p.emoji, "player-card__photo")}
+      ${photoHTML(p.foto, p.emoji, "player-card__photo", p.fotoPos)}
       <div class="player-card__header">
         <h3 class="player-card__name">${p.name}</h3>
         <span class="player-card__pos">${p.position}</span>
@@ -156,7 +172,7 @@ function renderGoals(filter) {
     const player = PLAYERS.find((p) => p.id === goal.player);
 
     card.innerHTML = `
-      ${photoHTML(goal.foto, goal.emoji, "goal-card__photo")}
+      ${photoHTML(goal.foto, goal.emoji, "goal-card__photo", goal.fotoPos)}
       <div class="goal-card__player" style="color:${player.color}">${player.name}</div>
       <h3 class="goal-card__title">${goal.title}</h3>
       <div class="goal-card__meta">
@@ -195,7 +211,7 @@ function openModal(goal) {
   const player = PLAYERS.find((p) => p.id === goal.player);
   const content = document.getElementById("modalContent");
   content.innerHTML = `
-    ${photoHTML(goal.foto, goal.emoji, "modal-photo")}
+    ${photoHTML(goal.foto, goal.emoji, "modal-photo", goal.fotoPos)}
     <div class="modal-player" style="color:${player.color}">${player.name}</div>
     <h2 class="modal-title">${goal.title}</h2>
     <div class="modal-grid">

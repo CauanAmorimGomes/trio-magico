@@ -15,6 +15,7 @@ const PLAYERS = [
     color: "#FFFFFF",
     emoji: "⚡",
     foto: "fotos/neymar.jpg",
+    fotoPos: "center 20%",
     desc: "Revelado nas categorias de base do Santos, Neymar estreou no profissional aos 17 anos e rapidamente se tornou o grande símbolo do futebol brasileiro. Com dribles desconcertantes e goleira fácil, foi o artilheiro do trio e o pivô central da formação mágica.",
     destaque: "Artilheiro da Copa do Brasil 2010 e Campeonato Paulista 2010",
     fase: "2009–2013 no Santos"
@@ -31,6 +32,7 @@ const PLAYERS = [
     color: "#C8C8C8",
     emoji: "🌟",
     foto: "fotos/robinho.jpg",
+    fotoPos: "52% 15%",
     desc: "Ídolo histórico do Santos, Robinho retornou ao clube em 2010 vindo do Manchester City para fazer dupla com os jovens Neymar e Ganso. Veterano experiente com passagens por Real Madrid e City, trouxe maturidade e classe ao trio.",
     destaque: "Vice-artilheiro e maior número de assistências do trio",
     fase: "Retorno 2010–2014 ao Santos"
@@ -132,6 +134,7 @@ const NOTABLE_GOALS = [
   {
     id: 4,
     foto: "fotos/gol-4.jpg",
+    fotoPos: "center 18%",
     player: "neymar",
     title: "Gol da Libertadores",
     competition: "Copa Libertadores 2011 — Final",
