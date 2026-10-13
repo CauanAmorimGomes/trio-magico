@@ -81,6 +81,8 @@ const TIMELINE = [
   },
   {
     year: "2011",
+    foto: "fotos/linha-2011.jpg",
+    fotoPos: "62% 15%",
     season: "O Auge",
     title: "A temporada inesquecível",
     description: "O Santos joga o melhor futebol do continente. O trio atua em total sincronia — Ganso criando, Neymar driblando, Robinho finalizando. O Pelé Arena vibra a cada partida.",
