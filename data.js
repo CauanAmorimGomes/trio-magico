@@ -59,6 +59,8 @@ const PLAYERS = [
 const TIMELINE = [
   {
     year: "2009",
+    foto: "fotos/linha-2009.jpg",
+    fotoPos: "center 30%",
     season: "A Revelação",
     title: "Neymar chega ao profissional",
     description: "Com apenas 17 anos, Neymar faz sua estreia memorável no Campeonato Paulista. Ganso já brilha como titular. O Santos começa a perceber que tem algo especial em mãos.",

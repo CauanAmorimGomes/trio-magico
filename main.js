@@ -120,6 +120,7 @@ function renderTimeline() {
     <div class="timeline-item ${i % 2 === 0 ? "left" : "right"}" data-index="${i}">
       <div class="timeline-dot"></div>
       <div class="timeline-card">
+        ${item.foto ? `<div class="timeline-photo"><img src="${item.foto}" alt="" loading="lazy" style="object-position:${item.fotoPos || "center"}" onerror="this.parentElement.remove()"></div>` : ""}
         <div class="timeline-year">${item.year}</div>
         <div class="timeline-season">${item.season}</div>
         <h3 class="timeline-title">${item.title}</h3>

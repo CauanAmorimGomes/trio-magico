@@ -1062,3 +1062,21 @@ body {
   .hero__photos { grid-template-columns: 1fr 1fr; }
   .hero__photo:nth-child(3) { display: none; }
 }
+
+/* ---------- FOTO NA LINHA DO TEMPO ---------- */
+.timeline-photo {
+  position: relative;
+  margin: -2.5rem -2.5rem 1.5rem;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.timeline-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.8s;
+}
+.timeline-card:hover .timeline-photo img { transform: scale(1.04); }
+.timeline-photo::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 40%;
+  background: linear-gradient(transparent, var(--surface));
+  pointer-events: none;
+}
