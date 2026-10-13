@@ -49,6 +49,7 @@ const PLAYERS = [
     color: "#9A9A9A",
     emoji: "🎯",
     foto: "fotos/ganso.jpg",
+    fotoPos: "48% 15%",
     desc: "O cérebro do trio. Ganso era o maestro que ditava o ritmo do jogo com passes milimétricos e visão de jogo privilegiada. Dono da camisa 10, foi o responsável por criar mais jogadas para os companheiros e tinha o maior número de assistências do trio.",
     destaque: "Maior assistente do trio — 55 passes para gol",
     fase: "2008–2012 no Santos"
