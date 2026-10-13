@@ -135,7 +135,7 @@ const NOTABLE_GOALS = [
   {
     id: 4,
     foto: "fotos/gol-4.jpg",
-    fotoPos: "center 18%",
+    fotoPos: "45% 30%",
     player: "neymar",
     title: "Gol da Libertadores",
     competition: "Copa Libertadores 2011 — Final",
