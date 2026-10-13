@@ -70,6 +70,8 @@ const TIMELINE = [
   },
   {
     year: "2010",
+    foto: "fotos/linha-2010.jpg",
+    fotoPos: "center 5%",
     season: "O Encontro",
     title: "Robinho retorna — o trio se completa",
     description: "O Santos anuncia o retorno de Robinho do Manchester City. Neymar e Ganso já formavam uma dupla explosiva — com Robinho, nasce o Trio Mágico. O Brasil todo para para assistir ao Santos.",
